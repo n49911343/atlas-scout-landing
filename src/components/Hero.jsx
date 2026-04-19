@@ -1,45 +1,53 @@
 import React from 'react';
-import { Shield } from 'lucide-react';
+import { Hotel, Car, Wifi, PlaneTakeoff } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12">
-      {/* Abstract Background Elements */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Background Image with Dark Gradient at the bottom */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[100px]"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gold/5 rounded-full blur-[100px]"></div>
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-base via-base/90 to-base"></div>
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center"></div>
+        {/* Gradient: lighter at top, very dark at bottom to make buttons pop */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-base"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 max-w-5xl text-center">
-        <div className="inline-flex items-center space-x-2 border border-gold/30 rounded-full px-4 py-1.5 mb-8 bg-dark-200/50 backdrop-blur-sm">
-          <Shield className="w-4 h-4 text-gold" />
-          <span className="text-gold text-xs tracking-[0.2em] uppercase font-medium">Закрытый доступ</span>
+      <div className="container mx-auto px-6 relative z-10 w-full mt-32 md:mt-48 flex flex-col items-center">
+        
+        <div className="text-center mb-16">
+          <h1 className="font-serif text-5xl md:text-7xl font-bold mb-6 text-white text-glow shadow-sm">
+            Travel Hacks Pro
+          </h1>
+          <p className="text-gray-200 text-xl md:text-2xl max-w-2xl mx-auto font-light drop-shadow-md">
+            Unlock the ultimate travel experience. The best deals, curated just for you.
+          </p>
         </div>
         
-        <h1 className="font-serif text-5xl md:text-7xl font-bold mb-8 text-white leading-tight">
-          Откройте для себя <br />
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-gold via-white to-gold text-glow">
-            скрытый Семиньяк
-          </span>
-        </h1>
-        
-        <p className="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-12 font-light leading-relaxed">
-          Устали от шумных туристических маршрутов и псевдопремиума? 
-          Мы предоставляем закрытый доступ к локациям, которых нет в путеводителях. 
-          Абсолютная приватность. Статусная эксклюзивность.
-        </p>
-        
-        <button 
-          onClick={() => document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })}
-          className="group relative inline-flex items-center justify-center px-8 py-4 font-medium tracking-wide text-white transition-all duration-500 ease-out bg-transparent border border-gold/50 rounded-none hover:bg-gold hover:text-base overflow-hidden"
-        >
-          <span className="absolute inset-0 w-full h-full -mt-1 rounded-none opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
-          <span className="relative z-10 flex items-center gap-2 uppercase text-sm tracking-[0.1em]">
-            Инициировать запрос
-          </span>
-        </button>
+        {/* 4 Action Buttons */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full max-w-6xl">
+          <button className="group relative flex flex-col items-center justify-center p-8 bg-dark-200/80 backdrop-blur-md border border-white/10 hover:border-gold/50 hover:bg-dark-100 transition-all duration-300 rounded-xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <Hotel className="w-10 h-10 text-gold mb-4 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-white font-medium text-lg tracking-wide">Book a Hotel</span>
+          </button>
+
+          <button className="group relative flex flex-col items-center justify-center p-8 bg-dark-200/80 backdrop-blur-md border border-white/10 hover:border-gold/50 hover:bg-dark-100 transition-all duration-300 rounded-xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <Car className="w-10 h-10 text-gold mb-4 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-white font-medium text-lg tracking-wide">Order Transfer</span>
+          </button>
+
+          <button className="group relative flex flex-col items-center justify-center p-8 bg-dark-200/80 backdrop-blur-md border border-white/10 hover:border-gold/50 hover:bg-dark-100 transition-all duration-300 rounded-xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <Wifi className="w-10 h-10 text-gold mb-4 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-white font-medium text-lg tracking-wide">Buy eSIM</span>
+          </button>
+
+          <button className="group relative flex flex-col items-center justify-center p-8 bg-dark-200/80 backdrop-blur-md border border-white/10 hover:border-gold/50 hover:bg-dark-100 transition-all duration-300 rounded-xl overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-t from-gold/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <PlaneTakeoff className="w-10 h-10 text-gold mb-4 group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-white font-medium text-lg tracking-wide text-center">Airport Assistance</span>
+          </button>
+        </div>
       </div>
     </section>
   );
